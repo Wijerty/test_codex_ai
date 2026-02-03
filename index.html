@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ВГУВТ · Панель контроля ИИ-отбора</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand__icon">ВГУВТ</span>
+        <div>
+          <p class="brand__name">Волжский госуниверситет</p>
+          <p class="brand__meta">Нижний Новгород · приемная комиссия</p>
+        </div>
+      </div>
+      <nav class="menu">
+        <a class="active" href="#overview">Обзор</a>
+        <a href="#pipeline">Поток абитуриентов</a>
+        <a href="#monitoring">Мониторинг агента</a>
+        <a href="#decisions">Решения комиссии</a>
+        <a href="#faculty">Факультеты</a>
+        <a href="#cases">Сложные кейсы</a>
+        <a href="#documents">Документы</a>
+        <a href="#settings">Настройки</a>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="user">
+          <div class="user__avatar">НК</div>
+          <div>
+            <p>Наталья К.</p>
+            <span>Секретарь приемной комиссии</span>
+          </div>
+        </div>
+        <button class="ghost">Выйти</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">ВГУВТ · прием 2025</p>
+          <h1>Контроль работы ИИ-агента отбора</h1>
+          <p>Обновление в реальном времени · 10:42</p>
+        </div>
+        <div class="topbar__actions">
+          <button class="ghost">Скачать отчет</button>
+          <button class="ghost">Импорт списков</button>
+          <button class="cta">Открыть заявки</button>
+        </div>
+      </header>
+
+      <section class="overview" id="overview">
+        <div class="stat">
+          <div>
+            <p>Заявок в системе</p>
+            <h2>3 248</h2>
+            <span class="trend">+12% за неделю</span>
+          </div>
+          <div class="sparkline">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="stat">
+          <div>
+            <p>Рекомендованы к зачислению</p>
+            <h2>812</h2>
+            <span class="trend">стабильно</span>
+          </div>
+          <div class="ring">25%</div>
+        </div>
+        <div class="stat">
+          <div>
+            <p>Сомнительные кейсы</p>
+            <h2>46</h2>
+            <span class="trend trend--warn">нужна ручная проверка</span>
+          </div>
+          <button class="cta cta--secondary">Перейти</button>
+        </div>
+        <div class="stat">
+          <div>
+            <p>Риск отсева</p>
+            <h2>7.4%</h2>
+            <span class="trend">ниже нормы ВГУВТ</span>
+          </div>
+          <div class="stat__badge">OK</div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card" id="pipeline">
+          <div class="card__header">
+            <h3>Поток абитуриентов</h3>
+            <button class="ghost">Фильтры</button>
+          </div>
+          <div class="pipeline">
+            <div>
+              <p>Заявка</p>
+              <strong>1 120</strong>
+            </div>
+            <div>
+              <p>Проверка данных</p>
+              <strong>824</strong>
+            </div>
+            <div>
+              <p>Оценка ИИ</p>
+              <strong>742</strong>
+            </div>
+            <div>
+              <p>Комиссия</p>
+              <strong>386</strong>
+            </div>
+          </div>
+          <div class="pipeline__bars">
+            <span style="width: 86%"></span>
+            <span style="width: 64%"></span>
+            <span style="width: 54%"></span>
+            <span style="width: 32%"></span>
+          </div>
+          <div class="pipeline__footer">
+            <div>
+              <p>Срочные приглашения на собеседование</p>
+              <strong>58</strong>
+            </div>
+            <button class="ghost">Списки интервью</button>
+          </div>
+        </div>
+
+        <div class="card" id="monitoring">
+          <div class="card__header">
+            <h3>Мониторинг агента</h3>
+            <span class="status">В работе</span>
+          </div>
+          <div class="agent">
+            <div>
+              <p>Время ответа</p>
+              <h4>2.8 сек</h4>
+              <span>Среднее за 24 часа</span>
+            </div>
+            <div>
+              <p>Ошибок данных</p>
+              <h4>0.6%</h4>
+              <span>Ниже целевого порога</span>
+            </div>
+            <div>
+              <p>Этичность оценок</p>
+              <h4>98.4%</h4>
+              <span>Аудит fairness</span>
+            </div>
+          </div>
+          <div class="agent__log">
+            <p>Последнее действие</p>
+            <div>
+              <strong>10:41</strong>
+              <span>ИИ-агент завершил оценку группы «Судовождение».</span>
+            </div>
+          </div>
+          <div class="agent__controls">
+            <button class="cta cta--secondary">Пауза оценки</button>
+            <button class="ghost">Открыть журнал</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card" id="decisions">
+          <div class="card__header">
+            <h3>Решения комиссии</h3>
+            <button class="ghost">Экспорт протокола</button>
+          </div>
+          <ul class="decision-list">
+            <li>
+              <div>
+                <strong>Группа «Судовые энергетические установки»</strong>
+                <span>Согласовано 26/30 мест · комиссия 2</span>
+              </div>
+              <button class="link">Подтвердить</button>
+            </li>
+            <li>
+              <div>
+                <strong>Группа «Логистика и управление»</strong>
+                <span>Ожидает подписи председателя</span>
+              </div>
+              <button class="link">Открыть протокол</button>
+            </li>
+            <li>
+              <div>
+                <strong>Группа «Информационные системы»</strong>
+                <span>Сформировать резервный список</span>
+              </div>
+              <button class="link">Сформировать</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card" id="faculty">
+          <div class="card__header">
+            <h3>Факультеты ВГУВТ</h3>
+            <button class="ghost">Настроить квоты</button>
+          </div>
+          <div class="faculty-grid">
+            <div>
+              <p>Судовождение</p>
+              <strong>148 / 160</strong>
+              <span>92% заполнение</span>
+            </div>
+            <div>
+              <p>Экономика и управление</p>
+              <strong>102 / 120</strong>
+              <span>85% заполнение</span>
+            </div>
+            <div>
+              <p>Кибербезопасность</p>
+              <strong>64 / 80</strong>
+              <span>80% заполнение</span>
+            </div>
+            <div>
+              <p>Логистика</p>
+              <strong>58 / 70</strong>
+              <span>83% заполнение</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card" id="cases">
+          <div class="card__header">
+            <h3>Сложные кейсы</h3>
+            <button class="ghost">Все кейсы</button>
+          </div>
+          <table class="cases">
+            <thead>
+              <tr>
+                <th>Абитуриент</th>
+                <th>Факультет</th>
+                <th>Статус</th>
+                <th>Действие</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="person">
+                    <span>ЕА</span>
+                    <div>
+                      <strong>Елизавета А.</strong>
+                      <small>портфолио спорное</small>
+                    </div>
+                  </div>
+                </td>
+                <td>Медиадизайн</td>
+                <td><span class="badge badge--warn">Нужна проверка</span></td>
+                <td><button class="link">Открыть</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="person">
+                    <span>ДМ</span>
+                    <div>
+                      <strong>Дмитрий М.</strong>
+                      <small>пересмотр баллов</small>
+                    </div>
+                  </div>
+                </td>
+                <td>Кибербезопасность</td>
+                <td><span class="badge">В очереди</span></td>
+                <td><button class="link">Открыть</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="person">
+                    <span>ИС</span>
+                    <div>
+                      <strong>Ирина С.</strong>
+                      <small>подозрение на bias</small>
+                    </div>
+                  </div>
+                </td>
+                <td>Экономика</td>
+                <td><span class="badge badge--alert">Критично</span></td>
+                <td><button class="link">Открыть</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cases__footer">
+            <button class="ghost">Назначить проверяющего</button>
+            <button class="cta cta--secondary">Сформировать отчет</button>
+          </div>
+        </div>
+
+        <div class="card" id="documents">
+          <div class="card__header">
+            <h3>Документы и проверки</h3>
+            <button class="ghost">Загрузить</button>
+          </div>
+          <div class="documents">
+            <div>
+              <p>Неполные документы</p>
+              <strong>137</strong>
+              <span>ожидают подтверждения</span>
+            </div>
+            <div>
+              <p>Скан ЕГЭ</p>
+              <strong>94%</strong>
+              <span>валидировано</span>
+            </div>
+            <div>
+              <p>Согласия на обработку</p>
+              <strong>2 980</strong>
+              <span>из 3 248</span>
+            </div>
+          </div>
+          <div class="documents__actions">
+            <button class="cta">Запросить недостающие</button>
+            <button class="ghost">Проверить вручную</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card" id="settings">
+          <div class="card__header">
+            <h3>Настройки контроля</h3>
+            <button class="ghost">Изменить</button>
+          </div>
+          <div class="settings">
+            <div>
+              <p>Порог рекомендаций</p>
+              <strong>82 / 100</strong>
+            </div>
+            <div>
+              <p>Частота пересчета</p>
+              <strong>каждые 2 часа</strong>
+            </div>
+            <div>
+              <p>Уведомления комиссии</p>
+              <strong>включены</strong>
+            </div>
+            <div>
+              <p>Квоты по направлениям</p>
+              <strong>актуальны</strong>
+            </div>
+          </div>
+          <div class="settings__actions">
+            <button class="cta cta--secondary">Симуляция отбора</button>
+            <button class="ghost">История изменений</button>
+          </div>
+        </div>
+
+        <div class="card" id="integrations">
+          <div class="card__header">
+            <h3>Интеграции ВГУВТ</h3>
+            <button class="ghost">Настроить</button>
+          </div>
+          <ul class="integration-list">
+            <li>
+              <div>
+                <strong>ЕГЭ / ФИС ГИА</strong>
+                <span>синхронизация каждые 30 мин</span>
+              </div>
+              <span class="badge">В норме</span>
+            </li>
+            <li>
+              <div>
+                <strong>1С: Университет</strong>
+                <span>последний импорт 09:50</span>
+              </div>
+              <span class="badge badge--warn">Есть задержка</span>
+            </li>
+            <li>
+              <div>
+                <strong>Система пропусков</strong>
+                <span>контроль входа на собеседования</span>
+              </div>
+              <span class="badge">В норме</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
